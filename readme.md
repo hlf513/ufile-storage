@@ -1,4 +1,4 @@
-ucloud ufile storage for laravel
+ucloud ufile storage for lumen
 base on https://docs.ucloud.cn/api/ufile-api/index
 
 config/filesystems.php
