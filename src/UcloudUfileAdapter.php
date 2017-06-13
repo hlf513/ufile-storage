@@ -209,5 +209,4 @@ class UcloudUfileAdapter extends AbstractAdapter {
 		$timestamp = strtotime($meta['Last-Modified']);
 		return array('timestamp' => $timestamp);
 	}
-
 }
