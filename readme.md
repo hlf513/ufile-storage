@@ -15,6 +15,6 @@ config/filesystems.php
 ```
 demo
 ```php
+$file = Storage::disk('public')->get('file.txt');
 Storage::disk('ufile')->put('file.name', $file);
-$url = Storage::disk('ufile')->url('file.name');
 ```
