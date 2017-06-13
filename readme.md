@@ -7,7 +7,7 @@ config/filesystems.php
         'ufile' => [
             'driver'  => 'ucloud-ufile',
             'bucket' => env('UFILE_BUCKET'),
-            'suffix' => env('UFILE_SUFFIX'),
+            'suffix' => env('UFILE_SUFFIX'),  //.ufile.ucloud.cn
             'public_key'=> env('UFILE_ACCESS_KEY'),  //AccessKey
             'secret_key'=> env('UFILE_SECRET_KEY'),  //SecretKey
         ]
