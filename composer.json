@@ -2,7 +2,7 @@
     "name": "zuitu/ufile-storage",
     "description": "ucloud-ufile-storage for lumen",
     "license": "MIT",
-    "keywords": ["ucloud ufile storage laravel"],
+    "keywords": ["ucloud ufile storage lumen"],
     "authors": [
         {
             "name": "zuitu",
