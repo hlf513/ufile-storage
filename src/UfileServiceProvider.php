@@ -1,5 +1,5 @@
 <?php
-namespace Xujif\UcloudUfileStorage;
+namespace Zuitu\UcloudUfileStorage;
 
 use Illuminate\Support\ServiceProvider;
 use League\Flysystem\Filesystem;
