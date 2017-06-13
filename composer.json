@@ -1,12 +1,12 @@
 {
-    "name": "xujif/ucloud-ufile-storage",
+    "name": "zuitu/ufile-storage",
     "description": "ucloud-ufile-storage for laravel",
     "license": "MIT",
     "keywords": ["ucloud ufile storage laravel"],
     "authors": [
         {
-            "name": "xujif",
-            "email": "i@xujif.com"
+            "name": "zuitu",
+            "email": "zuitu@foxmail.com"
         }
     ],
     "require": {
@@ -18,7 +18,7 @@
 
     "autoload": {
         "psr-4": {
-            "Xujif\\UcloudUfileStorage\\": "src/"
+            "Zuitu\\UfileStorage\\": "src/"
         }
     }
 }
