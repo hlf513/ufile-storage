@@ -17,10 +17,10 @@ return [
     'disks' => [
         'ufile' => [
             'driver'  => 'ucloud-ufile',
-            'bucket' => env('UCLOUD_BUCKET'),
-            'suffix' => env('UCLOUD_SUFFIX'),
-            'public_key'=> env('UCLOUD_ACCESS_KEY'),  //AccessKey
-            'secret_key'=> env('UCLOUD_SECRET_KEY'),  //SecretKey
+            'bucket' => env('UFILE_BUCKET'),
+            'suffix' => env('UFILE_SUFFIX'),
+            'public_key'=> env('UFILE_ACCESS_KEY'),  //AccessKey
+            'secret_key'=> env('UFILE_SECRET_KEY'),  //SecretKey
         ]
     ],
 
