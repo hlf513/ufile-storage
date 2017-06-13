@@ -15,7 +15,7 @@ return [
     */
 
     'disks' => [
-        'ucloud' => [
+        'ufile' => [
             'driver'  => 'ucloud-ufile',
             'bucket' => env('UCLOUD_BUCKET'),
             'suffix' => env('UCLOUD_SUFFIX'),
