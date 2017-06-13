@@ -1,5 +1,5 @@
 <?php
-namespace Zuitu\UcloudUfileStorage;
+namespace Zuitu\UfileStorage;
 
 use League\Flysystem\Adapter\AbstractAdapter;
 use League\Flysystem\Adapter\Polyfill\NotSupportingVisibilityTrait;
