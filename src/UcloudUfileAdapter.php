@@ -13,9 +13,18 @@ class UcloudUfileAdapter extends AbstractAdapter {
 
 	use NotSupportingVisibilityTrait, StreamedTrait, StreamedCopyTrait;
 	protected $ufileSdk;
+	protected $urlPrefix = 'http';
 
 	public function __construct($bucket, $public_key, $secret_key, $suffix = '.ufile.ucloud.cn', $pathPrefix = '', $https = false) {
 		$this->ufileSdk = new UfileSdk($bucket, $public_key, $secret_key, $suffix, $https);
+
+		if ($https) {
+			$this->urlPrefix .= 's';
+		}
+		$this->urlPrefix .= '://' . $bucket . $suffix . '/';
+		if ($pathPrefix) {
+			$this->urlPrefix .= $pathPrefix . '/';
+		}
 
 		$this->setPathPrefix($pathPrefix);
 	}
@@ -209,4 +218,9 @@ class UcloudUfileAdapter extends AbstractAdapter {
 		$timestamp = strtotime($meta['Last-Modified']);
 		return array('timestamp' => $timestamp);
 	}
+
+	public function getUrl($path)
+    {
+        return $this->urlPrefix . $this->getPathPrefix().$path;
+    }
 }
