@@ -12,17 +12,17 @@ return [
     |
     | Supported Drivers: "local", "ftp", "s3", "rackspace"
     |
-    */
+     */
 
     'disks' => [
         'ufile' => [
-            'driver'  => 'ucloud-ufile',
+            'driver' => 'ucloud-ufile',
             'bucket' => env('UFILE_BUCKET'),
             'suffix' => env('UFILE_SUFFIX'),
             'suffix_normal' => env('UFILE_SUFFIX_NORMAL'),
-            'public_key'=> env('UFILE_ACCESS_KEY'),  //AccessKey
-            'secret_key'=> env('UFILE_SECRET_KEY'),  //SecretKey
-        ]
+            'public_key' => env('UFILE_ACCESS_KEY'), //AccessKey
+            'secret_key' => env('UFILE_SECRET_KEY'), //SecretKey
+        ],
     ],
 
 ];

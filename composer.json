@@ -1,8 +1,8 @@
 {
     "name": "zuitu/ufile-storage",
-    "description": "ucloud-ufile-storage for lumen",
+    "description": "ufile storage for lumen",
     "license": "MIT",
-    "keywords": ["ucloud ufile storage lumen"],
+    "keywords": ["ufile storage lumen"],
     "authors": [
         {
             "name": "zuitu",
@@ -18,7 +18,7 @@
 
     "autoload": {
         "psr-4": {
-            "zuitu\\UfileStorage\\": "src/"
+            "Zuitu\\UfileStorage\\": "src/"
         }
     }
 }
