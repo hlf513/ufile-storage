@@ -13,13 +13,13 @@ class UcloudUfileAdapter extends AbstractAdapter
 {
     use NotSupportingVisibilityTrait, StreamedTrait, StreamedCopyTrait;
 
-    protected $ufileSdk;
+    protected $UfileSDK;
 
     protected $urlPrefix = 'http';
 
     public function __construct($bucket, $public_key, $secret_key, $suffix = '.ufile.ucloud.cn', $pathPrefix = '', $https = false)
     {
-        $this->ufileSdk = new UfileSdk($bucket, $public_key, $secret_key, $suffix, $https);
+        $this->UfileSDK = new UfileSDK($bucket, $public_key, $secret_key, $suffix, $https);
 
         if ($https) {
             $this->urlPrefix .= 's';
@@ -55,7 +55,7 @@ class UcloudUfileAdapter extends AbstractAdapter
     public function delete($path)
     {
         $path = $this->applyPathPrefix($path);
-        return $this->ufileSdk->delete($path);
+        return $this->UfileSDK->delete($path);
     }
 
     /**
@@ -80,7 +80,7 @@ class UcloudUfileAdapter extends AbstractAdapter
     public function getMetadata($path)
     {
         $path = $this->applyPathPrefix($path);
-        return $this->ufileSdk->meta($path);
+        return $this->UfileSDK->meta($path);
     }
 
     /**
@@ -93,7 +93,7 @@ class UcloudUfileAdapter extends AbstractAdapter
     public function getMimetype($path)
     {
         $path = $this->applyPathPrefix($path);
-        $mimeType = $this->ufileSdk->mime($path);
+        $mimeType = $this->UfileSDK->mime($path);
         return array('mimetype' => $mimeType);
     }
 
@@ -107,7 +107,7 @@ class UcloudUfileAdapter extends AbstractAdapter
     public function getSize($path)
     {
         $path = $this->applyPathPrefix($path);
-        $size = $this->ufileSdk->size($path);
+        $size = $this->UfileSDK->size($path);
         return array('size' => $size);
     }
 
@@ -140,7 +140,7 @@ class UcloudUfileAdapter extends AbstractAdapter
     public function has($path)
     {
         $path = $this->applyPathPrefix($path);
-        return $this->ufileSdk->exists($path);
+        return $this->UfileSDK->exists($path);
     }
 
     /**
@@ -160,7 +160,7 @@ class UcloudUfileAdapter extends AbstractAdapter
     {
         $path = $this->applyPathPrefix($path);
         $data = [];
-        $data['contents'] = $this->ufileSdk->get($path);
+        $data['contents'] = $this->UfileSDK->get($path);
         return $data;
     }
 
@@ -220,7 +220,7 @@ class UcloudUfileAdapter extends AbstractAdapter
         $params = $config->get('params', null);
         $mime = $config->get('mime', 'application/octet-stream');
         $checkCrc = $config->get('checkCrc', false);
-        list($ret, $code) = $this->ufileSdk->put($path, $contents, ['Content-Type' => $mime]);
+        list($ret, $code) = $this->UfileSDK->put($path, $contents, ['Content-Type' => $mime]);
         return $ret;
     }
 
@@ -239,6 +239,6 @@ class UcloudUfileAdapter extends AbstractAdapter
         $params = $config->get('params', null);
         $mime = $config->get('mime', 'application/octet-stream');
         $checkCrc = $config->get('checkCrc', false);
-        list($ret, $code) = $this->ufileSdk->put($path, $resource, ['Content-Type' => $mime]);
+        list($ret, $code) = $this->UfileSDK->put($path, $resource, ['Content-Type' => $mime]);
     }
 }
