@@ -7,7 +7,8 @@ use League\Flysystem\Adapter\Polyfill\StreamedCopyTrait;
 use League\Flysystem\Adapter\Polyfill\StreamedTrait;
 use League\Flysystem\Config;
 use LogicException;
-use Zuitu\UfileSDK\UfileSDK;
+use Hlf\UcloudUfileSdk\UfileSdk;
+
 
 class UcloudUfileAdapter extends AbstractAdapter
 {
